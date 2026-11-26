@@ -1,8 +1,11 @@
-pages:
+create-pages:
   stage: deploy
   script:
-    - echo "Publishing GitLab Pages"
+    - echo "Deploying website from html folder"
   pages:
     publish: html
+  artifacts:
+    paths:
+      - html
   rules:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
